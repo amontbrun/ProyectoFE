@@ -1,11 +1,22 @@
 <template>
-  <div>
-      <h1>Vehiculos</h1>
-      <h5>Data</h5>
-      <pre>
-          {{$data}}
-      </pre>
-  </div>
+<div class="row">
+    <div class="col-md-12">
+        <h1 >Vehicles({{count}})</h1>
+    </div>
+    <div class="col-md-2" v-for="vehicle in vehicles" :key="vehicles.count" style="margin-bottom: 10px;">
+        <div class="card">
+          <img class="card-img-top img-responsive" src="../assets/images/frontepisode1.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{vehicle.name}}</h5>
+                <div>
+                    <p>{{vehicle.manufacturer }}</p>
+
+                </div>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+</div>
 </template>
 <script>
 import axios from 'axios'
