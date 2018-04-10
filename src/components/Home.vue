@@ -22,7 +22,7 @@ return{
 
 methods: {
     getFilms(){
-        axios.get('https://swapi.co/api/films')
+        axios.get('https://swapi.co/api/films/')
             .then((res)=>{
                 console.log(res)
                 this.films= res.data.results
