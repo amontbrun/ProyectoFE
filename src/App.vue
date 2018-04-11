@@ -3,7 +3,7 @@
 <template>  
 <div id="app" >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">StarWars</a>
+  <router-link to="/" class="navbar-brand">StarWars</router-link>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -22,15 +22,11 @@
   </div>
 </nav>
 
-
-
-    <ul>
-
-
-    </ul>
     <router-view></router-view>
 
   </div>
+
+
 </template>
 
 <script>
@@ -38,6 +34,7 @@
 export default {
   name: 'app',
 }
+
 </script>
 
 <style>

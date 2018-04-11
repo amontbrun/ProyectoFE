@@ -1,18 +1,19 @@
 <template>
 <div class="row">
     <div class="col-md-12">
-        <h1 >Vehicles({{count}})</h1>
+        <h1 >Vehicles {{vehicle.count}}</h1>
     </div>
-    <div class="col-md-2" v-for="vehicle in vehicles" :key="vehicles.count" style="margin-bottom: 10px;">
+    <div class="col-md-3" v-for="vehicle in vehicles" :key="vehicle.name" style="margin-bottom: 10px;">
         <div class="card">
-          <img class="card-img-top img-responsive" src="../assets/images/frontepisode1.jpg" alt="Card image cap">
-            <div class="card-body">
+                      <div class="card-body">
                 <h5 class="card-title">{{vehicle.name}}</h5>
                 <div>
                     <p>{{vehicle.manufacturer }}</p>
+                    <p><strong>Films</strong></p>
+                    <p>{{vehicle.films }}</p>
 
                 </div>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+
             </div>
         </div>
     </div>
@@ -23,11 +24,13 @@ import axios from 'axios'
 export default {
   name: 'Vehiculos',
 mounted(){
- this.getVehicles()
+ this.getVehicles(),
+ this.getFilms()
 },
 data(){
 return{
-    vehicles:[]
+    vehicles:[],
+    films: []
 }
 },
 
@@ -42,6 +45,17 @@ methods: {
             .catch((err)=>{
                 console.log(err)
             })
+    },
+    getFilms() {
+      axios
+        .get("https://swapi.co/api/films/")
+        .then(res => {
+          console.log(res);
+          this.films = res.data.results.title;
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
 
 }

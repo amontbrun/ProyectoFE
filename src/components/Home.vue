@@ -3,9 +3,9 @@
     <div class="col-md-12">
         <h1>Films</h1>
     </div>
-    <div class="col-md-6" v-for="film in films" :key="films.count" style="margin-bottom: 10px;">
+    <div class="col-md-12" v-for="film in films" :key="film.episode_id" style="margin-bottom: 10px;">
         <div class="card">
-           <img class="card-img-top img-responsive" src="../assets/images/frontepisode1.jpg" alt="Card image cap">
+             <img class="card-img-top img-responsive" :src="'images/film-bg-ep-'+film.episode_id + '.jpg'" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{film.title}}</h5>
                 <div>
@@ -35,8 +35,8 @@ export default {
       axios
         .get("https://swapi.co/api/films/")
         .then(res => {
-          console.log(res);
           this.films = res.data.results;
+          console.log(res);
         })
         .catch(err => {
           console.log(err);

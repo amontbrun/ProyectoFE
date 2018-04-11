@@ -1,10 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
-import 'jquery'
-import 'popper.js'
-import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.css' 
 import Home from './components/Home.vue'
 import Peliculas from './components/Peliculas.vue'
 import Personajes from './components/Personajes.vue'
@@ -12,8 +8,13 @@ import Planetas from './components/Planetas.vue'
 import Vehiculos from './components/Vehiculos.vue'
 import Cruceros from './components/Cruceros.vue'
 import quickMenu from 'vue-quick-menu'
+import 'jquery'
+import 'popper.js'
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.css' 
 
-import icons from 'glyphicons'
+
+//import icons from 'glyphicons'
 
 
 Vue.use(VueRouter)

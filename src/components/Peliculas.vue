@@ -3,14 +3,17 @@
     <div class="col-md-12">
         <h1>Films</h1>
     </div>
-    <div class="col-md-3" v-for="film in films" :key="films.count" style="margin-bottom: 10px;">
+    <div class="col-md-3" v-for="film in films" :key="film.episode_id" style="margin-bottom: 10px;">
         <div class="card">
-            <img class="card-img-top img-responsive" src="../assets/images/frontepisode1.jpg" alt="Card image cap">
-         
-            <div class="card-body">
+             <img class="card-img-top img-responsive" :src="'images/film-episode-'+film.episode_id + '.jpg'" alt="Card image cap">
+                     <div class="card-body">
                 <h5 class="card-title">{{film.title}}</h5>
                 <div>
                     <p>{{film.opening_crawl}}</p>
+                     <p><strong>Personajes</strong></p>
+                    <persona :url="url"
+                              v-for="url in film.character"
+                              :key="url"></persona>             
 
                 </div>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
@@ -21,8 +24,12 @@
 </template>
 <script>
 import axios from "axios";
+import Persona from "../components/subcomponents/Persona.vue";
 export default {
   name: "Peliculas",
+  components: {
+    Persona: "persona"
+  },
   mounted() {
     this.getFilms();
   },

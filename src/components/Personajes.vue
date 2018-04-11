@@ -1,21 +1,22 @@
 <template>
 <div class="row">
     <div class="col-md-12">
-        <h1>people</h1>
+        <h1>People</h1>
     </div>
-    <div class="col-md-3" v-for="person in people" :key="people.count" style="margin-bottom: 10px;">
+    <div class="col-md-3" v-for="person in people" :key="person.url" style="margin-bottom: 10px;">
         <div class="card">
-           <img class="card-img-top img-responsive" src="../assets/images/frontepisode1.jpg" alt="Card image cap">
+           <img class="card-img-top img-responsive" :src="'images/people/'+person.name.split(' ').join('') + '.jpg'" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{person.name}}</h5>
                 <div>
-                    <p>{{person.gender}}</p>
+                    <p>{{person.homeworld}}</p>
                 </div>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
     </div>
 </div>
+
 </template>
 <script>
 import axios from 'axios'
