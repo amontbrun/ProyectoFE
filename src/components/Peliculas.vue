@@ -12,7 +12,7 @@
                     <p>{{film.opening_crawl}}</p>
                      <p><strong>Personajes</strong></p>
                     <persona :url="url"
-                              v-for="url in film.character"
+                              v-for="url in film.characters"
                               :key="url"></persona>             
 
                 </div>
@@ -28,7 +28,7 @@ import Persona from "../components/subcomponents/Persona.vue";
 export default {
   name: "Peliculas",
   components: {
-    Persona: "persona"
+    'persona': Persona
   },
   mounted() {
     this.getFilms();

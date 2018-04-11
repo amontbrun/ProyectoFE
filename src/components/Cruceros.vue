@@ -3,7 +3,7 @@
     <div class="col-md-12">
         <h1>starships</h1>
     </div>
-    <div class="col-md-3" v-for="starship in starships" :key="starships.count" style="margin-bottom: 10px;">
+    <div class="col-md-3" v-for="starship in starships" :key="starship.name" style="margin-bottom: 10px;">
         <div class="card">
              <img class="card-img-top img-responsive" src="../assets/images/frontepisode1.jpg" alt="Card image cap">
      

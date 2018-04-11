@@ -12,9 +12,9 @@ mounted(){
  this.getPersona()
 },
 data(){
-return{
-    people:[]
-}
+    return{
+        persona:{}
+    }
 },
 
 methods: {
