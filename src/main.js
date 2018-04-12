@@ -7,11 +7,12 @@ import Personajes from './components/Personajes.vue'
 import Planetas from './components/Planetas.vue'
 import Vehiculos from './components/Vehiculos.vue'
 import Cruceros from './components/Cruceros.vue'
-import quickMenu from 'vue-quick-menu'
+// import quickMenu from 'vue-quick-menu'
 import 'jquery'
 import 'popper.js'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css' 
+
 
 
 //import icons from 'glyphicons'
