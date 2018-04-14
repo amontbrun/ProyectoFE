@@ -1,19 +1,19 @@
 <template>
 <div class="row">
     <div class="col-md-12">
-        <h1 >Vehicles {{vehicle.count}}</h1>
+        <h1>Vehicles</h1>
+             <img class="card-img-top img-responsive" src="../assets/images/vehicles-bg.jpg" alt="Card image cap">
     </div>
     <div class="col-md-3" v-for="vehicle in vehicles" :key="vehicle.name" style="margin-bottom: 10px;">
         <div class="card">
-                      <div class="card-body">
+     
+            <div class="card-body">
                 <h5 class="card-title">{{vehicle.name}}</h5>
                 <div>
-                    <p>{{vehicle.manufacturer }}</p>
-                    <p><strong>Films</strong></p>
-                    <p>{{vehicle.films }}</p>
+                    <p>{{vehicle.model}}</p>
 
                 </div>
-
+                <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
     </div>
@@ -22,20 +22,18 @@
 <script>
 import axios from 'axios'
 export default {
-  name: 'Vehiculos',
+  name: 'vehiculos',
 mounted(){
- this.getVehicles(),
- this.getFilms()
+ this.getStarships()
 },
 data(){
 return{
-    vehicles:[],
-    films: []
+    vehicles:[]
 }
 },
 
 methods: {
-    getVehicles(){
+    getStarships(){
         axios.get('https://swapi.co/api/vehicles/')
             .then((res)=>{
                 console.log(res)
@@ -45,17 +43,6 @@ methods: {
             .catch((err)=>{
                 console.log(err)
             })
-    },
-    getFilms() {
-      axios
-        .get("https://swapi.co/api/films/")
-        .then(res => {
-          console.log(res);
-          this.films = res.data.results.title;
-        })
-        .catch(err => {
-          console.log(err);
-        });
     }
 
 }

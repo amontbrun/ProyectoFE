@@ -7,12 +7,12 @@ import Personajes from './components/Personajes.vue'
 import Planetas from './components/Planetas.vue'
 import Vehiculos from './components/Vehiculos.vue'
 import Cruceros from './components/Cruceros.vue'
-import quickMenu from 'vue-quick-menu'
+//import quickMenu from 'vue-quick-menu'
+import FilmDetail from './components/subcomponents/FilmDetail.vue'
 import 'jquery'
 import 'popper.js'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css' 
-
 
 
 //import icons from 'glyphicons'
@@ -28,6 +28,7 @@ const routes =[
   {path:'/planetas', name: 'planetas', component: Planetas},
   {path:'/vehiculos', name: 'vehiculos', component: Vehiculos },
   {path:'/cruceros', name:  'cruceros', component: Cruceros},
+  {path: '/film/:id', name: 'film', component: FilmDetail, props: true }
 
 ]
 
@@ -39,4 +40,3 @@ new Vue({
   router,
   render: h => h(App)
 }).$mount('#app')
-

@@ -1,9 +1,9 @@
 <template>
   <div>
-      
+      <h1>Pagina 2</h1>
       <h3>{{ film.title }}</h3>
       <pre>
-      <!-- {{ film }} -->
+      {{ film }}
       </pre>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
   methods: {
       getFilmDetail(){
           console.log(this.id)
-          axios.get('https://swapi.co/api/films/'+this.id)
+          axios.get('http://swapi.co/api/films/'+this.id)
             .then((res) => {
                 this.film = res.data
             })

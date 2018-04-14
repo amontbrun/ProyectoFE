@@ -10,13 +10,14 @@
                 <h5 class="card-title">{{film.title}}</h5>
                 <div>
                     <p>{{film.opening_crawl}}</p>
+
                      <p><strong>Personajes</strong></p>
                     <persona :url="url"
                               v-for="url in film.characters"
                               :key="url"></persona>             
 
                 </div>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <router-link :to="'/film/'+film.url.substr(27,27)">Mas detalle: {{ film.title }}</router-link>
             </div>
         </div>
     </div>
