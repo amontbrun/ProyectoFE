@@ -10,7 +10,12 @@
             <div class="card-body">
                 <h5 class="card-title">{{planet.name}}</h5>
                 <div>
-                    <p>{{planet.opening_crawl}}</p>
+                    <p><strong> Diametro: </strong>{{planet.diameter}}</p>
+                    <p><strong> Clima:  </strong>{{planet.climate}}</p>
+                    <p><strong> Terreno: </strong>{{planet.terrain}}</p>
+                    <p><strong> Superficie de agua:: </strong>{{planet.surface_water}}%</p>
+                    <p><strong> Poblacion: </strong>{{planet.population}}</p>
+
 
                 </div>
                 <a href="#" class="btn btn-primary">Go somewhere</a>

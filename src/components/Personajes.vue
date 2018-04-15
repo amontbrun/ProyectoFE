@@ -12,6 +12,9 @@
                     <p>Planeta: {{person.homeworld}}</p>
                     <p>Especie: {{person.species}}</p>
                     <p>Peliculas: <br> {{person.films}}</p>
+                    <!-- <pelicula :url="url"
+                                v-for="url in film.episode_id"
+                                :key="url"></pelicula> -->
                 </div>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
@@ -22,8 +25,12 @@
 </template>
 <script>
 import axios from 'axios'
+import Pelicula from "../components/subcomponents/Pelicula.vue";
 export default {
   name: 'Personajes',
+  components: {
+      pelicula: Pelicula
+  },
 mounted(){
  this.getPeople()
 },

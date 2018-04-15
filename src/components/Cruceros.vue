@@ -11,6 +11,12 @@
                 <h5 class="card-title">{{starship.name}}</h5>
                 <div>
                     <p>{{starship.model}}</p>
+                    <p><strong> Modelo: </strong>{{starship.model}}</p>
+                    <p><strong> Fabricante: </strong>{{starship.manufacturer}}</p>
+                    <p><strong> Tripulacion: </strong>{{starship.crew}}</p>
+                    <p><strong> Pasajeros: </strong>{{starship.passengers}}</p>
+                    <p><strong> Clase: </strong>{{starship.starship_class}}</p>
+
 
                 </div>
                 <a href="#" class="btn btn-primary">Go somewhere</a>

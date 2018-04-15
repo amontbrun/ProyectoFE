@@ -10,7 +10,11 @@
             <div class="card-body">
                 <h5 class="card-title">{{vehicle.name}}</h5>
                 <div>
-                    <p>{{vehicle.model}}</p>
+                    <p><strong> Modelo: </strong>{{vehicle.model}}</p>
+                    <p><strong> Longitud: </strong>{{vehicle.lenght}}</p>
+                    <p><strong> Tripulacion: </strong>{{vehicle.crew}}</p>
+                    <p><strong> Pasajeros: </strong>{{vehicle.passengers}}</p>
+                    <p><strong> Clase: </strong>{{vehicle.vehicle_class}}</p>
 
                 </div>
                 <a href="#" class="btn btn-primary">Go somewhere</a>

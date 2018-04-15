@@ -20,13 +20,10 @@
                     <p><strong>Productor: </strong> {{film.producer}}</p>
                     <p><strong>Episodio #:: </strong> {{film.episode_id}}</p>
                     <p><strong>Fecha: </strong> {{film.release_date}}</p>
-
                      <p><strong>Personajes</strong></p>
                     <persona :url="url"
                               v-for="url in film.characters"
                               :key="url"></persona>  
-     
-
                 </div>
                 <router-link :to="'/film/'+film.url.substr(27,27)">Mas detalle: {{ film.title }}</router-link>
             </div>
@@ -40,7 +37,7 @@ import Persona from "../components/subcomponents/Persona.vue";
 export default {
   name: "Peliculas",
   components: {
-    'persona': Persona
+    persona: Persona
   },
   mounted() {
     this.getFilms();

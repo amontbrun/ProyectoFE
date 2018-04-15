@@ -16,23 +16,19 @@ data(){
         persona:{}
     }
 },
-
 methods: {
     getPersona(){
         axios.get(this.url)
             .then((res)=>{
                 this.persona= res.data
                 console.log(res.data.name)
-
         })
             .catch((err)=>{
                 console.log(err)
             })
     }
-
 }
 }
-
 </script>
 <style scoped>
 
