@@ -13,7 +13,8 @@ import 'jquery'
 import 'popper.js'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css' 
-
+//import VueHighlightJS from 'vue-highlightjs'
+import { coverflow } from 'vue-coverflow'
 
 //import icons from 'glyphicons'
 

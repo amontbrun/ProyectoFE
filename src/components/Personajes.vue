@@ -1,7 +1,7 @@
 <template>
 <div class="row">
     <div class="col-md-12">
-        <h1>People</h1>
+        <h1>Personajes</h1>
     </div>
     <div class="col-md-3" v-for="person in people" :key="person.url" style="margin-bottom: 10px;">
         <div class="card">
@@ -9,7 +9,9 @@
             <div class="card-body">
                 <h5 class="card-title">{{person.name}}</h5>
                 <div>
-                    <p>{{person.homeworld}}</p>
+                    <p>Planeta: {{person.homeworld}}</p>
+                    <p>Especie: {{person.species}}</p>
+                    <p>Peliculas: <br> {{person.films}}</p>
                 </div>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>

@@ -1,4 +1,10 @@
 <template>
+<!-- template new -->
+
+
+
+
+<!-- new template end -->
 <div class="row">
     <div class="col-md-12">
         <h1>Films</h1>
@@ -9,12 +15,17 @@
                      <div class="card-body">
                 <h5 class="card-title">{{film.title}}</h5>
                 <div>
-                    <p>{{film.opening_crawl}}</p>
+                    <p><strong>Sinopsis: </strong>  <br> {{film.opening_crawl}}</p>
+                    <p><strong>Director: </strong> {{film.director}}</p>
+                    <p><strong>Productor: </strong> {{film.producer}}</p>
+                    <p><strong>Episodio #:: </strong> {{film.episode_id}}</p>
+                    <p><strong>Fecha: </strong> {{film.release_date}}</p>
 
                      <p><strong>Personajes</strong></p>
                     <persona :url="url"
                               v-for="url in film.characters"
-                              :key="url"></persona>             
+                              :key="url"></persona>  
+     
 
                 </div>
                 <router-link :to="'/film/'+film.url.substr(27,27)">Mas detalle: {{ film.title }}</router-link>

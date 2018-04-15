@@ -9,7 +9,11 @@
             <div class="card-body">
                 <h5 class="card-title">{{film.title}}</h5>
                 <div>
-                    <p>{{film.opening_crawl}}</p>
+                    <p><strong>Sinopsis: </strong>  <br> {{film.opening_crawl}}</p>
+                    <p><strong>Director: </strong> {{film.director}}</p>
+                    <p><strong>Productor: </strong> {{film.producer}}</p>
+                    <p><strong>Episodio #:: </strong> {{film.episode_id}}</p>
+                    <p><strong>Fecha: </strong> {{film.release_date}}</p>
                 </div>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>

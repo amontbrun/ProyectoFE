@@ -1,6 +1,6 @@
 <template>
 <div class="row">
-    <h4>{{persona.name}}</h4>
+    <p>     {{persona.name}}</p>
 </div>
 </template>
 <script>
