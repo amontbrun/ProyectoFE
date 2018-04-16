@@ -1,4 +1,5 @@
 <template>
+<div class="BG">
 <div class="row">
     <div class="col-md-12">
     <br>
@@ -34,7 +35,7 @@
         </div>
     </div>
 </div>    
-             
+</div>               
 </template>
 <script>
 import axios from "axios";
@@ -71,5 +72,16 @@ export default {
 };
 </script>
 <style scoped>
+.BG {
+    background-image: url("../assets/images/vehicles-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.card{
+    background-color: rgb(212, 222, 238);
+    padding: 10px;
+    opacity: 0.7;
+    filter: alpha(opacity=30); /* For IE8 and earlier */
+}
 
 </style>

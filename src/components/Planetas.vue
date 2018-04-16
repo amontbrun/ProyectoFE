@@ -1,8 +1,9 @@
 <template>
+<div class="BG">
 <div class="row">
     <div class="col-md-12">
         <h1>Planets</h1>
-          <img class="card-img-top img-responsive" src="../assets/images/planets-bg.jpg" alt="Card image cap">
+          <!-- <img class="card-img-top img-responsive" src="../assets/images/planets-bg.jpg" alt="Card image cap"> -->
     </div>
     <div class="col-md-3" v-for="planet in planets" :key="planet.name" style="margin-bottom: 10px;">
         <div class="card">
@@ -18,10 +19,11 @@
 
 
                 </div>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
             </div>
         </div>
     </div>
+</div>
 </div>
 </template>
 <script>
@@ -53,6 +55,17 @@ export default {
 };
 </script>
 <style scoped>
+.BG {
+    background-image: url("../assets/images/planets-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.card{
+    background-color: rgb(212, 222, 238);
+    padding: 10px;
+    opacity: 0.7;
+    filter: alpha(opacity=30); /* For IE8 and earlier */
+}
 
 </style>
 
