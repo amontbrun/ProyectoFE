@@ -1,6 +1,6 @@
 <template>
 <div class="row">
-    <p>     {{persona.name}}</p>
+    <li>     {{persona.name}}</li>
 </div>
 </template>
 <script>
@@ -21,7 +21,7 @@ methods: {
         axios.get(this.url)
             .then((res)=>{
                 this.persona= res.data
-                console.log(res.data.name)
+                // console.log(res.data.name)
         })
             .catch((err)=>{
                 console.log(err)

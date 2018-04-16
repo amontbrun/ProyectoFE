@@ -7,19 +7,22 @@ import Personajes from './components/Personajes.vue'
 import Planetas from './components/Planetas.vue'
 import Vehiculos from './components/Vehiculos.vue'
 import Cruceros from './components/Cruceros.vue'
+// import PaginationNav from 'bootstrap-vue/es/components'
 //import quickMenu from 'vue-quick-menu'
 import FilmDetail from './components/subcomponents/FilmDetail.vue'
 import 'jquery'
 import 'popper.js'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css' 
+
 //import VueHighlightJS from 'vue-highlightjs'
-import { coverflow } from 'vue-coverflow'
+//import { coverflow } from 'vue-coverflow'
 
 //import icons from 'glyphicons'
 
 
 Vue.use(VueRouter)
+// Vue.use(PaginationNav)
 Vue.config.productionTip = false
 
 const routes =[

@@ -9,7 +9,7 @@
     <div class="col-md-12">
         <h1>Films</h1>
     </div>
-    <div class="col-md-3" v-for="film in films" :key="film.episode_id" style="margin-bottom: 10px;">
+    <div class="col-md-6" v-for="film in films" :key="film.episode_id" style="margin-bottom: 10px;">
         <div class="card">
              <img class="card-img-top img-responsive" :src="'images/film-episode-'+film.episode_id + '.jpg'" alt="Card image cap">
                      <div class="card-body">
@@ -21,9 +21,12 @@
                     <p><strong>Episodio #:: </strong> {{film.episode_id}}</p>
                     <p><strong>Fecha: </strong> {{film.release_date}}</p>
                      <p><strong>Personajes</strong></p>
-                    <persona :url="url"
+                    <ul>
+                      <persona :url="url"
                               v-for="url in film.characters"
                               :key="url"></persona>  
+                      
+                    </ul>
                 </div>
                 <router-link :to="'/film/'+film.url.substr(27,27)">Mas detalle: {{ film.title }}</router-link>
             </div>
@@ -53,7 +56,7 @@ export default {
       axios
         .get("https://swapi.co/api/films/")
         .then(res => {
-          console.log(res);
+          //console.log(res);
           this.films = res.data.results;
         })
         .catch(err => {

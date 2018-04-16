@@ -1,61 +1,74 @@
 <template>
 <div class="row">
     <div class="col-md-12">
-        <h1>Personajes</h1>
+    <br>
+    <div class="row">
+            <pagination 
+                :ruta="ruta" 
+                :count="characters.count" 
+                :next="characters.next" 
+                :previous="characters.previous" />
     </div>
-    <div class="col-md-3" v-for="person in people" :key="person.url" style="margin-bottom: 10px;">
+    </div>
+    <div class="col-md-3" 
+            v-for="character in characters.results" 
+            :key="character.name" 
+            style="margin-bottom: 10px;">
+
         <div class="card">
-           <img class="card-img-top img-responsive" :src="'images/people/'+person.name.split(' ').join('') + '.jpg'" alt="Card image cap">
+           <img class="card-img-top img-responsive " 
+                :src="'images/people/'+character.name.split(' ').join('') + '.jpg'" 
+                alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">{{person.name}}</h5>
+                <h5 class="card-title">{{character.name}}</h5>
                 <div>
-                    <p>Planeta: {{person.homeworld}}</p>
-                    <p>Especie: {{person.species}}</p>
-                    <p>Peliculas: <br> {{person.films}}</p>
+                    <p><strong>Planeta: </strong>{{character.homeworld}}</p>
+                    <p><strong>Especie: </strong>{{character.species}}</p>
+                    <p><strong>Peliculas: </strong><br> {{character.films}}</p>
                     <!-- <pelicula :url="url"
                                 v-for="url in film.episode_id"
                                 :key="url"></pelicula> -->
                 </div>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
             </div>
         </div>
     </div>
-</div>
-
+</div>    
+             
 </template>
 <script>
-import axios from 'axios'
-import Pelicula from "../components/subcomponents/Pelicula.vue";
+import axios from "axios";
+//import Pelicula from "../components/subcomponents/Pelicula.vue";
+import Pagination from "../components/subcomponents/Pagination.vue";
 export default {
-  name: 'Personajes',
-  components: {
-      pelicula: Pelicula
+    name:       "People",
+    components: {
+    pagination: Pagination
   },
-mounted(){
- this.getPeople()
-},
-data(){
-return{
-    people:[]
-}
-},
-
-methods: {
-    getPeople(){
-        axios.get('https://swapi.co/api/people/')
-            .then((res)=>{
-                console.log(res)
-                this.people= res.data.results
-
+  mounted: function() {
+    this.getResponse(this.ruta);
+  },
+  data: function() {
+    return {
+      characters: [],
+      ruta: "https://swapi.co/api/people",
+      page: 1
+    };
+  },
+  methods: {
+    getResponse: function(url) {
+      //console.log(url)
+      axios
+        .get(url)
+        .then(res => {
+          this.characters = res.data;
         })
-            .catch((err)=>{
-                console.log(err)
-            })
+        .catch((err) => {
+          console.log(err);
+        });
     }
-
-}
-}
-
+  }
+};
 </script>
 <style scoped>
 

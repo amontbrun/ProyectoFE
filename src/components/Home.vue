@@ -15,7 +15,7 @@
                     <p><strong>Episodio #:: </strong> {{film.episode_id}}</p>
                     <p><strong>Fecha: </strong> {{film.release_date}}</p>
                 </div>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <router-link :to="'/film/'+film.url.substr(27,27)">Mas detalle: {{ film.title }}</router-link>
             </div>
         </div>
     </div>
