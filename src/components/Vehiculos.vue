@@ -83,7 +83,7 @@ methods: {
     background-size: auto;
 }
 .card{
-    background-color: rgb(124, 162, 219);
+    background-color: rgb(212, 222, 238);
     padding: 10px;
     opacity: 0.7;
     filter: alpha(opacity=30); /* For IE8 and earlier */
